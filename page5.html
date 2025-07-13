@@ -1,0 +1,115 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Correct Choice</title>
+  <style>
+    .avatar {
+      position: fixed;
+      bottom: 27px;
+      right: 10px;
+      width: 250px;
+      /* adjust size */
+      height: auto;
+      z-index: 999;
+      /* make sure it stays on top */
+    }
+
+    .mirn {
+      position: fixed;
+      width: 138px;
+      /* adjust size */
+      left: -150px;
+      /* start off screen */
+      top: 28%;
+      transform: translateY(-50%);
+      animation: flyIn 1s ease-out forwards, float 3s ease-in-out infinite;
+      z-index: 999;
+      pointer-events: none;
+      /* don't block clicks */
+    }
+
+    @keyframes flyIn {
+      to {
+        left: 10px;
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(-50%);
+      }
+
+      50% {
+        transform: translateY(-60%);
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0f3d2e;
+      color: #e1fbee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+      background: url(intdes\ right\ background.png);
+      background-size: 100%;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #00e59b;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      background-color: #00e59b;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00c98a;
+    }
+
+    button:hover {
+      background-color: #01a06e;
+    }
+  </style>
+</head>
+
+<body>
+  <audio autoplay>
+    <source src="intdes right.mp3">
+  </audio>
+  <img src="intdes-mirn-correct.svg" class="mirn" />
+  <img src="intdes danielle right.png" class="avatar" alt="My Avatar" />
+  <h1>Congrats! You protected Danielle!</h1>
+  <p>They actually had malicious intent! She avoided having a deepfake video of her sprewing vulgarities spread around.
+    Your caution protected Danielle's digital identity.</p>
+
+  <button onclick="location.href='page6.html'">Next →</button>
+
+</body>
+
+</html>

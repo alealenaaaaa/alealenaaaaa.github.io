@@ -1,0 +1,180 @@
+<html>
+
+<head>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Titillium+Web:wght@200&display=swap"
+    rel="stylesheet">
+
+  <title>Welcome to MirrorNet</title>
+  <style>
+    /* h1 { */
+    .goldman-bold {
+      font-family: "Goldman", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      text-align: center;
+      background: url(mirror\ net\ home\ final.svg);
+      background-size: 100
+    }
+
+
+    .mirn {
+      position: fixed;
+      width: 150px;
+      /* adjust size */
+      left: -150px;
+      /* start off screen */
+      top: 30%;
+      transform: translateY(-50%);
+      animation: flyIn 1s ease-out forwards, float 3s ease-in-out infinite;
+      z-index: 999;
+      pointer-events: none;
+      /* don't block clicks */
+    }
+
+    @keyframes flyIn {
+      to {
+        left: 20px;
+      }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(-50%); }
+      50% { transform: translateY(-60%); }
+    }
+
+    .typewriter-line {
+      overflow: hidden;
+      white-space: nowrap;
+      /* border-right: 2px solid #fff; */
+      display: inline-block;
+      opacity: 0;
+      animation: typing 2s steps(40, end) forwards;
+    }
+
+    /* Line 2 delay */
+    .delay1 {
+      animation-delay: 2s;
+    }
+
+    /* Line 3 delay */
+    .delay2 {
+      animation-delay: 4s;
+    }
+
+    /* Line 4 delay (button fade in) */
+    .button-delay {
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+      animation-delay: 6s;
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0;
+        opacity: 0;
+
+      }
+
+      100% {
+        width: 100%;
+        opacity: 1;
+
+      }
+    }
+    /* @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    } */
+
+    /* @keyframes blink {
+      50% { border-color: transparent; }
+    } */
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 0 20px 2rem;
+      max-width: 600px;
+    }
+
+    button {
+      padding: 0.75rem 2rem;
+      font-size: 1.2rem;
+      background-color: #a2a8e1;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #868eba;
+    }
+
+    .play-music {
+      font-weight: 600;
+      padding: 1rem 0.5rem;
+      background-color: #c9cee2;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="intdes-mirn-correct.svg" class="mirn" />
+  <!-- Line 1 -->
+  <h1 class="goldman-bold">
+    <span class="typewriter-line">Welcome to MirrorNet</span>
+  </h1>
+  <!-- <div class="typewriter-line delay1"> -->
+    <!-- Line 2 -->
+  <p><span class="typewriter-line delay1">You are the guardian of MirrorNet, Mirn.</span></p>
+
+  <!-- Line 3 -->
+  <p><span class="typewriter-line delay2">Save the citizens before they fall victim to scams!</span></p>
+  <!-- </div> -->
+
+  <!-- Button appears after lines finish -->
+  <button class="button-delay" onclick="location.href='page2.html'">Start the Game</button>
+  <!-- Calls the javascript function called playMusic() -->
+  <button class="play-music" onclick="playMusic()">Music <img src="intdes-music.svg"width="20"/></button>
+
+
+</body>
+
+</html>
+
+
+<script>
+  // Posts a message called "playMusic" and broadcasts it
+  function playMusic() {
+    window.parent.postMessage("playMusic", "*");
+  }
+</script>

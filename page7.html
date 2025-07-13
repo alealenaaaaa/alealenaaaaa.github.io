@@ -1,0 +1,118 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Decision</title>
+  <style>
+    .avatar {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 250px;
+      /* adjust size */
+      height: auto;
+      z-index: 999;
+      /* make sure it stays on top */
+    }
+
+    .mirn {
+      position: fixed;
+      width: 160px;
+      /* adjust size */
+      left: -150px;
+      /* start off screen */
+      top: 27%;
+      transform: translateY(-50%);
+      animation: flyIn 1s ease-out forwards, float 3s ease-in-out infinite;
+      z-index: 999;
+      pointer-events: none;
+      /* don't block clicks */
+    }
+
+    @keyframes flyIn {
+      to {
+        left: 20px;
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(-50%);
+      }
+
+      50% {
+        transform: translateY(-60%);
+      }
+    }
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      background: url(mirrornet\ background.svg)
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .options button {
+      background-color: #a2a8e1;
+      color: #000;
+      font-size: 1rem;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .options button:hover {
+      background-color: #868eba;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="intdes-mirn-choice.svg" class="mirn" />
+  <img src="intdes alex confused.png" class="avatar" alt="My Avatar" />
+
+  <h1>How can you help Alex?</h1>
+  <p>His friend just asked for $1000 in a phone call. You're not sure if it was really him. Choose your next step:</p>
+
+  <div class="options">
+    <button onclick="location.href='page8.html'">A. Agree and transfer them the money</button>
+    <button onclick="location.href='page9.html'">B. Text them to confirm it's really them</button>
+    <button onclick="location.href='page8.html'">C. Pay only half the amount</button>
+  </div>
+
+</body>
+
+</html>

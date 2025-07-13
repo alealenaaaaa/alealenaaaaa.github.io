@@ -1,0 +1,109 @@
+<html>
+    <head>
+  <title>MirrorNet: Danielle's Story</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+  <style>
+
+    .avatar {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 250px; /* adjust size */
+      height: auto;
+      z-index: 999; /* make sure it stays on top */
+    }
+    
+    .mirn {
+    position: fixed;
+    width: 150px; /* adjust size */
+    right: -150px; /* start off screen */
+    top: 30%;
+    transform: translateY(-50%);
+   animation: flyIn 1s ease-out forwards, float 3s ease-in-out infinite;
+    z-index: 999;
+    pointer-events: none; /* don't block clicks */
+  }
+
+  @keyframes flyIn {
+    to {
+      right: 20px;
+    }
+  }
+  @keyframes float {
+      0%, 100% { transform: translateY(-50%); }
+      50% { transform: translateY(-60%); }
+    }
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      overflow-y: scroll;
+      padding: 40px 20px;
+      background:url(mirrornet\ background.svg)
+    }
+
+
+    .story-container {
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .story-segment {
+      margin-bottom: 40px;
+      font-size: 1.3rem;
+    }
+
+    .next-button {
+      /* display: none; */
+      background: #a2a8e1;
+      color: #000;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 30px;
+      margin-bottom:30px; 
+      display: inline-block;
+    }
+    
+  
+  </style>
+</head>
+<body>
+  <img src="intdes-mirn-scenario.svg" class="mirn"/>
+   <img src="intdes danielle right.png" class="avatar" alt="My Avatar" />
+  <div class="story-container">
+    <div data-aos="fade-up" class="story-segment">This is <strong>Danielle</strong>, a student working hard to earn money.</div>
+    <div data-aos="fade-up" class="story-segment">She applies for a part-time job online. The listing looks promising.</div>
+    <div data-aos="fade-up" class="story-segment"><img src="intdes tancheekianposter.png" width="350"/></div>
+    <div data-aos="fade-up" class="story-segment">A few days later, she receives an email — "you've been shortlisted!"</div>
+    <div data-aos="fade-up" class="story-segment">But before proceeding, they ask her for a <strong>photo</strong> of herself...</div>
+    <div data-aos="fade-up" class="story-segment">...and a <strong>voice recording</strong> to "verify the identity."</div>
+    <div data-aos="fade-up" class="story-segment"><img src="intdes danielle msgs.png" width="350"/></div>
+    <button class="next-button" onclick="location.href='page3.html'">Next</button>
+  </div>
+
+
+
+
+  
+  <script>
+  AOS.init();
+</script>
+
+
+</body>
+</html>

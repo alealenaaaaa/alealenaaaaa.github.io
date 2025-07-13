@@ -1,0 +1,148 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Incoming Call</title>
+  <style>
+    .avatar {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 250px;
+      /* adjust size */
+      height: auto;
+      z-index: 999;
+      /* make sure it stays on top */
+    }
+
+    .mirn {
+      position: fixed;
+      width: 170px;
+      /* adjust size */
+      right: -150px;
+      /* start off screen */
+      top: 30%;
+      transform: translateY(-50%);
+      animation: flyIn 1s ease-out forwards, float 3s ease-in-out infinite;
+      z-index: 999;
+      pointer-events: none;
+      /* don't block clicks */
+    }
+
+    @keyframes flyIn {
+      to {
+        right: 40px;
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(-50%);
+      }
+
+      50% {
+        transform: translateY(-60%);
+      }
+    }
+
+    body {
+      margin: 0;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      overflow-y: scroll;
+      padding: 40px 20px;
+      background: url(mirrornet\ background.svg)
+    }
+
+    .story-container {
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .story-segment {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      margin-bottom: 40px;
+      font-size: 1.3rem;
+    }
+
+    .story-segment.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .continue-button {
+      display: none;
+      background: #a2a8e1;
+      color: #000;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .continue-button.visible {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="intdes-mirn-scenario.svg" class="mirn" />
+  <img src="intdes alex profile.png" class="avatar" alt="My Avatar" />
+  <div class="story-container">
+    <div class="story-segment">This is <strong>Alex</strong>, a working adult with a successful business.</div>
+    <div class="story-segment">One day, he receives a call from someone he trusts — <br> a friend from way back. He
+      picks up the phone.</div>
+    <div class="story-segment">On the other end, his friend sounds worried and stressed.</div>
+    <div class="story-segment">They say: <br><em>“Hey Alex! It's Stephan. I'm in a tight situation right now, <br>can you lend me $1000 please?<br>
+        I'll pay you back next month! I promise!”</em></div>
+        <audio controls>
+          <source src="intdes voice cloning.m4a">
+        </audio>
+    <div class="story-segment"><img src="intdes alex call.png" width="300" /></div>
+    <button class="continue-button" onclick="location.href='page7.html'">Continue</button>
+  </div>
+
+
+  <script>
+    const segments = document.querySelectorAll('.story-segment');
+    const continueBtn = document.querySelector('.continue-button');
+
+    const revealOnScroll = () => {
+      let allVisible = true;
+
+      segments.forEach(segment => {
+        const rect = segment.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          segment.classList.add('visible');
+        } else {
+          allVisible = false;
+        }
+      });
+
+      if (allVisible) {
+        continueBtn.classList.add('visible');
+      }
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wrong Choice</title>
+    <style>
+        .avatar {
+            position: fixed;
+            bottom: 25px;
+            left: 10px;
+            width: 250px;
+            /* adjust size */
+            height: auto;
+            z-index: 999;
+            /* make sure it stays on top */
+        }
+
+        .mirn {
+            position: fixed;
+            width: 160px;
+            /* adjust size */
+            right: -150px;
+            /* start off screen */
+            top: 30%;
+            transform: translateY(-50%);
+            animation: flyIn 1s ease-out forwards, float 3s ease-in-out infinite;
+            z-index: 999;
+            pointer-events: none;
+            /* don't block clicks */
+        }
+
+        @keyframes flyIn {
+            to {
+                right: 20px;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(-50%);
+            }
+
+            50% {
+                transform: translateY(-60%);
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2c0f0f;
+            color: #fff3f3;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            background: url(intdes\ wrong\ background.png);
+            background-size: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff4d4d;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            background-color: #ffdada;
+            color: #2c0f0f;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffc0c0;
+        }
+    </style>
+</head>
+
+<body>
+    <audio autoplay>
+        <source src="intdes wrong.mp3">
+    </audio>
+    <img src="intdes-mirn-failed.svg" class="mirn" />
+    <img src="intdes mike wrong.png" class="avatar" alt="My Avatar" />
+    <h1>MIKE GOT SCAMMED</h1>
+    <p>Too hasty! He didn't think the message was suspicious and he got hacked! Go back for a safer option!</p>
+
+    <button onclick="location.href='page15.html'">← Go Back and Choose Again</button>
+
+</body>
+
+</html>
